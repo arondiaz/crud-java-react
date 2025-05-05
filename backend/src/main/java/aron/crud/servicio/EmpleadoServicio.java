@@ -3,6 +3,7 @@ package aron.crud.servicio;
 import aron.crud.modelo.Empleado;
 import aron.crud.repositorio.EmpleadoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
