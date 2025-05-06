@@ -1,0 +1,30 @@
+.container {
+  background-color: rgb(53, 53, 53);
+  padding: 1rem 3rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.form-container > label {
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.form-container > input {
+  padding: 0.7rem;
+}
+
+.btn-submit {
+  margin-top: 1rem;
+  border: none;
+  background-color: aqua;
+  font-size: 1rem;
+  border-radius: 1rem;
+  color: black;
+  font-weight: bold;
+  padding: 0.6rem;
+}

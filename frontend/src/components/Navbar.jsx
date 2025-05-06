@@ -5,14 +5,21 @@ import { Link } from "react-router";
 const Navbar = () => {
   return (
     <div className="container-nav">
-    <div className="navbar">
-      <h1>CRUD REACT JAVA</h1>
-      <ul>
-        <li>
-        <Link to={"/agregarEmpleado"} className="link">Agregar empleado</Link>
-        </li>
-      </ul>
-    </div>
+      <div className="navbar">
+        <h1>CRUD REACT JAVA</h1>
+        <ul>
+          <li>
+            <Link to={"/"} className="link">
+              Inicio
+            </Link>
+          </li>
+          <li>
+            <Link to={"/agregarEmpleado"} className="link">
+              Agregar empleado
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

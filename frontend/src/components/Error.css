@@ -1,0 +1,8 @@
+.error-container {
+  background-color: rgb(170, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.7rem 0.5rem;
+}
