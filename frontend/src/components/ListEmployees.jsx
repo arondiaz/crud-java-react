@@ -13,8 +13,6 @@ const ListEmployees = () => {
 
         const response = await axios.get(url);
 
-        console.log(response.data);
-
         setUsers(response.data);
       } catch (error) {
         console.log(error);
@@ -24,7 +22,22 @@ const ListEmployees = () => {
     fetchUsers();
   }, []);
 
-  console.log(users);
+  const deleteEmployee = async (user) => {
+    const { idEmpleado, nombre } = user;
+    const isTrue = confirm(`Esta seguro de eliminar ${nombre}?`);
+    const url = `http://localhost:8080/crud/empleados/${idEmpleado}`;
+    if (!isTrue) {
+      return;
+    }
+    try {
+      await axios.delete(url);
+      setUsers(users.filter((userFil) => userFil.idEmpleado !== idEmpleado));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const editEmployee = () => {};
 
   return (
     <div className="container-list">
@@ -35,16 +48,28 @@ const ListEmployees = () => {
             <th>Nombre</th>
             <th>Departamento</th>
             <th>Sueldo</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {users.map((user, key) =>(
+          {users.map((user, key) => (
             <tr key={key}>
               <td>{user.idEmpleado}</td>
               <td>{user.nombre}</td>
               <td>{user.departamento}</td>
               <td>{priceFormat(user.sueldo)}</td>
-        </tr>
+              <td>
+                <button className="edit-btn" onClick={() => editEmployee(user)}>
+                  Editar
+                </button>{" "}
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteEmployee(user)}
+                >
+                  Delete
+                </button>{" "}
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

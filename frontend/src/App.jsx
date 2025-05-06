@@ -1,13 +1,17 @@
 import React from 'react'
 import "./App.css"
 import ListEmployees from './components/listEmployees'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
+    <>
+    <Navbar/>
     <div className='container-app'>
-      <h1>CRUD REACT JAVA</h1>
+
       <ListEmployees/>
     </div>
+    </>
   )
 }
 

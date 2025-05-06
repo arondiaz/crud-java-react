@@ -1,32 +1,61 @@
 .container-list {
-    width: 100%;
-    max-width: 900px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    overflow-x: auto;
-    color: #333;
-  }
-  
-  .employee-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .employee-table th,
-  .employee-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #ccc;
-    text-align: left;
-  }
-  
-  .employee-table th {
-    background-color: #1c12af;
-    color: white;
-  }
-  
-  .employee-table tr:hover {
-    background-color: #f2f2f2;
-  }
-  
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  color: #333;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: #1c12af;
+  color: white;
+}
+
+.employee-table tr:hover {
+  background-color: #f2f2f2;
+}
+
+.delete-btn {
+  border: none;
+  background-color: rgb(131, 10, 10);
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.delete-btn:hover {
+  background-color: rgb(120, 7, 7);
+}
+
+.edit-btn {
+  border: none;
+  background-color: rgb(136, 160, 1);
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.edit-btn:hover {
+  background-color: rgb(129, 160, 8);
+}
