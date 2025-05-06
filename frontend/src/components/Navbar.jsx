@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
@@ -7,7 +8,9 @@ const Navbar = () => {
     <div className="navbar">
       <h1>CRUD REACT JAVA</h1>
       <ul>
-        <li>Agregar empleado</li>
+        <li>
+        <Link to={"/agregarEmpleado"} className="link">Agregar empleado</Link>
+        </li>
       </ul>
     </div>
     </div>

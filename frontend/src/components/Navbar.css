@@ -1,18 +1,18 @@
-.container-nav{
-    background-color: #1e1e2f;
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.container-nav {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar h1 {
@@ -30,12 +30,13 @@
   padding: 0;
 }
 
-.navbar ul li {
+.link {
+  color: white;
   cursor: pointer;
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
 }
 
-.navbar ul li:hover {
+.link:hover {
   color: #00bcd4;
 }
