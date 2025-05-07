@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./ListEmployees.css";
 import axios from "axios";
 import { priceFormat } from "../utils/priceFormat";
+import EditForm from "./EditForm";
 
 const ListEmployees = () => {
   const [users, setUsers] = useState([]);
+  const [employeeToEdit, setEmployeeToEdit] = useState(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -37,7 +39,9 @@ const ListEmployees = () => {
     }
   };
 
-  const editEmployee = () => {};
+  const handleEdit = (employee) => {
+    setEmployeeToEdit(employee);
+  };
 
   return (
     <div className="container-list">
@@ -59,7 +63,7 @@ const ListEmployees = () => {
               <td>{user.departamento}</td>
               <td>{priceFormat(user.sueldo)}</td>
               <td>
-                <button className="edit-btn" onClick={() => editEmployee(user)}>
+                <button className="edit-btn" onClick={() => handleEdit(user)}>
                   Editar
                 </button>{" "}
                 <button
@@ -73,6 +77,14 @@ const ListEmployees = () => {
           ))}
         </tbody>
       </table>
+
+      {employeeToEdit && (
+        <EditForm
+          key={employeeToEdit.idEmpleado}
+          employee={employeeToEdit}
+          onClose={() => setEmployeeToEdit(null)}
+        />
+      )}
     </div>
   );
 };

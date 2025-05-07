@@ -15,12 +15,7 @@ const EmployeeForm = () => {
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const addEmployee = async (e) => {
@@ -76,7 +71,7 @@ const EmployeeForm = () => {
           onChange={handleChange}
         />
 
-        <input className="btn-submit" type="submit" value={"Editar"} />
+        <input className="btn-submit" type="submit" value={"Agregar"} />
         {error && <Error error={error} />}
       </form>
     </div>
