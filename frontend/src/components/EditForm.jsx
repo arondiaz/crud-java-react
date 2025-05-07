@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import "./EditForm.css"
 
 const EditForm = ({ employee, onClose }) => {
   const [editForm, setEditForm] = useState({ ...employee });
@@ -24,40 +25,46 @@ const EditForm = ({ employee, onClose }) => {
   console.log(employee);
 
   return (
-    <div>
-      <form action="" method="PUT" onSubmit={handleSave}>
-        <label htmlFor="nombre">Nombre</label>
-        <input
-          type="text"
-          name="nombre"
-          value={editForm.nombre}
-          onChange={handleChange}
-        />
+    <div className="modal-container">
+      <div className="modal">
+        <h2>Editar empleado</h2>
+        <form action="" method="PUT" onSubmit={handleSave} className="edit-form">
+          <label htmlFor="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            value={editForm.nombre}
+            onChange={handleChange}
+          />
 
-        <label htmlFor="departamento">Departamento</label>
-        <input
-          type="text"
-          name="departamento"
-          value={editForm.departamento}
-          onChange={handleChange}
-        />
+          <label htmlFor="departamento">Departamento</label>
+          <input
+            type="text"
+            name="departamento"
+            value={editForm.departamento}
+            onChange={handleChange}
+          />
 
-        <label htmlFor="sueldo">Sueldo</label>
-        <input
-          type="number"
-          name="sueldo"
-          value={editForm.sueldo}
-          onChange={handleChange}
-        />
+          <label htmlFor="sueldo">Sueldo</label>
+          <input
+            type="number"
+            name="sueldo"
+            value={editForm.sueldo}
+            onChange={handleChange}
+          />
 
-        <input
-          onClick={handleSave}
-          className="btn-submit"
-          type="submit"
-          value={"Editar"}
-        />
-        <button onClick={onClose}>Cancelar</button>
-      </form>
+          <div className="btn-modal">
+            <input
+              onClick={handleSave}
+              className="btn-edit"
+              type="submit"
+              value={"Editar"}
+            />
+
+            <button onClick={onClose} className="btn-cancel">Cancelar</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

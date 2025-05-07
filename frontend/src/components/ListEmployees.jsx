@@ -82,7 +82,18 @@ const ListEmployees = () => {
         <EditForm
           key={employeeToEdit.idEmpleado}
           employee={employeeToEdit}
-          onClose={() => setEmployeeToEdit(null)}
+          onClose={(updatedEmployee) => {
+            setEmployeeToEdit(null);
+            if (updatedEmployee) {
+              setUsers((prevUsers) =>
+                prevUsers.map((user) =>
+                  user.idEmpleado === updatedEmployee.idEmpleado
+                    ? updatedEmployee
+                    : user
+                )
+              );
+            }
+          }}
         />
       )}
     </div>
