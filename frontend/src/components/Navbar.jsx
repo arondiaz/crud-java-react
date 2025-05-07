@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <div className="container-nav">
       <div className="navbar">
-        <h1>CRUD REACT JAVA</h1>
+        <Link to={"/"}>
+          <h1>CRUD REACT JAVA</h1>
+        </Link>
         <ul>
           <li>
             <Link to={"/"} className="link">
