@@ -72,6 +72,7 @@ const EmployeeForm = () => {
         />
 
         <input className="btn-submit" type="submit" value={"Agregar"} />
+ 
         {error && <Error error={error} />}
       </form>
     </div>

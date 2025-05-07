@@ -22,8 +22,6 @@ const EditForm = ({ employee, onClose }) => {
     }
   };
 
-  console.log(employee);
-
   return (
     <div className="modal-container">
       <div className="modal">
