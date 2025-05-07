@@ -51,4 +51,22 @@ public class EmpleadoControlador {
 
     }
 
+    @GetMapping("empleados/{id}")
+    public ResponseEntity<Empleado> obtenerEmpleadoPorId(@PathVariable Integer id){
+        Empleado empleado = empleadoServicio.buscarEmpleadoPorId(id);
+        if(empleado == null){
+            throw new Error("Error el usuario no existe");
+        }
+        return ResponseEntity.ok(empleado);
+    };
+
+    @PutMapping("empleados/{id}")
+    public ResponseEntity<Empleado> editarEmpleado(@PathVariable Integer id, @RequestBody Empleado empleadoEdit) {
+        Empleado empleado = empleadoServicio.buscarEmpleadoPorId(id);
+        empleado.setNombre(empleadoEdit.getNombre());
+        empleado.setSueldo(empleadoEdit.getSueldo());
+        empleado.setDepartamento(empleadoEdit.getDepartamento());
+        empleadoServicio.guardarEmpleado(empleado);
+        return ResponseEntity.ok(empleado);
+    };
 }
